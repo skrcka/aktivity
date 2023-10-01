@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  appearance: none;
+  outline: 0;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  padding-right: 30px;  /* Add this to adjust the padding on the right side */
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto; /* Ensure the select adjusts its width based on content */
+}
+
+.custom-select:hover select {
+  border-color: #888;
+}
+
+.custom-select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
