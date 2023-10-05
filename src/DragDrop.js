@@ -24,7 +24,7 @@ function shuffle(array) {
 }
 
 
-function App() {
+function DragDrop() {
   const [answers, setAnswers] = useState({});
   const [errors, setErrors] = useState([]);
   const [isCorrect, setIsCorrect] = useState(null);
@@ -136,4 +136,4 @@ function App() {
   );
 }
 
-export default App;
+export default DragDrop;
