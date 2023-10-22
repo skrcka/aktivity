@@ -22,27 +22,31 @@ function Filler() {
   const phrases = [
     { id: 1, text: "A concrete plant, also called concrete batching plant is an industrial facility used to produce" },
     { id: 2, select: ["concrete", "mixer", "equipment"] },
-    { id: 3, text: "It is formed by mixing" },
+    { id: 3, text: ". It is formed by mixing" },
     { id: 4, select: ["aggregates", "batchers", "silos"] },
-    { id: 5, select: ["sand", "bins", "room"] },
-    { id: 6, select: ["cement", "batchers", "concrete"] },
-    { id: 7, select: ["water", "equipment", "silos"] },
-    { id: 8, text: "and usually other additives, which are most often fly ash, slag, stone flour and" },
-    { id: 9, select: ["chemical additives", "concrete", "room"] },
-    { id: 10, text: "br" },
-    { id: 11, text: "A concrete batching plant has various components: mainly a" },
-    { id: 12, select: ["mixer", "concrete", "sand"] },
-    { id: 13, text: ", aggregate " },
-    { id: 14, select: ["bins", "chemical additives", "aggregates"] },
-    { id: 15, text: "cement " },
-    { id: 16, select: ["silos", "cement", "water"] },
-    { id: 17, text: ", aggregate and cement" },
-    { id: 18, select: ["batchers", "chemical additives", "sand"] },
-    { id: 19, text: "batch plant control " },
-    { id: 20, select: ["room", "water", "aggregates"] },
-    { id: 21, text: "and others such as recycling " },
-    { id: 22, select: ["equipment", "sand", "concrete"] },
-    { id: 23, text: ", etc." },
+    { id: 5, text: "," },
+    { id: 6, select: ["sand", "bins", "room"] },
+    { id: 7, text: "," },
+    { id: 8, select: ["cement", "batchers", "concrete"] },
+    { id: 9, text: "," },
+    { id: 10, select: ["water", "equipment", "silos"] },
+    { id: 11, text: "and usually other additives, which are most often fly ash, slag, stone flour and" },
+    { id: 12, select: ["chemical additives", "concrete", "room"] },
+    { id: 13, text: "." },
+    { id: 14, text: "br" },
+    { id: 15, text: "A concrete batching plant has various components: mainly a" },
+    { id: 16, select: ["mixer", "concrete", "sand"] },
+    { id: 17, text: ", aggregate " },
+    { id: 18, select: ["bins", "chemical additives", "aggregates"] },
+    { id: 19, text: ", cement " },
+    { id: 20, select: ["silos", "cement", "water"] },
+    { id: 21, text: ", aggregate and cement" },
+    { id: 22, select: ["batchers", "chemical additives", "sand"] },
+    { id: 23, text: ", batch plant control " },
+    { id: 24, select: ["room", "water", "aggregates"] },
+    { id: 25, text: "and others such as recycling " },
+    { id: 26, select: ["equipment", "sand", "concrete"] },
+    { id: 27, text: ", etc..." },
   ];
 
   const correctAnswers = {
@@ -78,8 +82,11 @@ function Filler() {
       {phrases.map(phrase => (
         phrase.text
           ? <>
-            <span className='m-1' key={phrase.id}>{phrase.text} </span>
-            {(phrase.text === 'br') && <div className='mt-3'></div>}
+            {(phrase.text === 'br') ?
+              <div className='mt-3'></div>
+              :
+              <span className='m-1' key={phrase.id}>{phrase.text} </span>
+            }
             </>
           : <div className="custom-select">
             <select
